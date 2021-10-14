@@ -8,4 +8,4 @@ Code Snippets from HTML to Javascript and React JS
 
 ## Code Snippets
 
-1. ...
+- Web Speech API
