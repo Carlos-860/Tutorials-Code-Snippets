@@ -1,0 +1,21 @@
+.fa-chevron-down {
+  animation: ;
+}
+
+.img-fluid.target-element {
+  opacity: 0;
+  transform: translateY(2rem);
+}
+.img-fluid.target-element.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 650ms ease;
+}
+
+.target-element:not(img) {
+  opacity: 0.25;
+}
+.target-element:not(img).active {
+  opacity: 1;
+  transition: all 650ms ease;
+}

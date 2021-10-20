@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intersection Obsever API</title>
+
+    <!-- Boostrap CSS v5.1.3 CDN link -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Custom CSS File -->
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+
+  <body>
+    <main>
+      <section class="min-vh-100 d-flex flex-column justify-content-center align-items-center">
+        <h1 class="">Scroll below to see the Intersection Observer in action</h1>
+        <i class="fas fa-chevron-down"></i>
+      </section>
+      <section>
+        <div class="container">
+          <div class="min-vh-100 row gx-5">
+            <div class="col-md-6 my-auto">
+              <img src="https://source.unsplash.com/random/768x640" alt="Feature 1" width="768" height="640" class="img-fluid target-element" />
+            </div>
+            <div class="col-md-6 my-auto target-element">
+              <h3 class="fw-bolder">Collaborative tools to design user experience</h3>
+
+              <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+            </div>
+          </div>
+
+          <div class="min-vh-100 row gx-5">
+            <div class="col-md-6 my-auto target-element">
+              <h3 class="fw-bolder">Design tools all in one</h3>
+
+              <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+            </div>
+
+            <div class="col-md-6 my-auto">
+              <img src="https://source.unsplash.com/random/768x640" alt="Feature 2" width="768" height="640" class="img-fluid target-element" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
