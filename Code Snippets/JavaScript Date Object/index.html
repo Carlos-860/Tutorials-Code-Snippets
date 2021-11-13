@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Native Date Object</title>
+
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <main></main>
+
+    <footer>© Copyright <span id="date"></span>. All Rights Reserved.</footer>
+
+    <script>
+      let currentDate;
+      currentDate = new Date();
+      currentDate = currentDate.getFullYear();
+      document.getElementById('date').textContent = `2019-${currentDate.toString()}`;
+    </script>
+
+    <script src="index.js"></script>
+  </body>
+</html>

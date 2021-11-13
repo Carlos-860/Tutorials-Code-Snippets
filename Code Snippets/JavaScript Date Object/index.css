@@ -1,0 +1,12 @@
+main {
+  min-height: 89vh;
+}
+
+footer {
+  background: #7c3aed;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding: 1rem 0.75rem;
+  font-size: 0.9rem;
+}
