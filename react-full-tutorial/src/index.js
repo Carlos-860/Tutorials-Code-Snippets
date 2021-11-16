@@ -1,7 +1,8 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 // 5.
 // React DOM & JSX Practice
-// import React from 'react';
-// import ReactDOM from 'react-dom';
 // ReactDOM.render(
 //   <ul>
 //     <li>Item 1</li>
@@ -26,8 +27,6 @@
 
 // 7.
 // Functional Components Practice
-// import React from 'react';
-// import ReactDOM from 'react-dom';
 // function MyInfo() {
 //   return (
 //     <>
@@ -45,27 +44,72 @@
 // const paragraphStyles = {
 //   color: 'red',
 // };
+//
 // ReactDOM.render(<MyInfo />, document.getElementById('root'));
 
 // 8.
 // Move Components into seperate files
-// import React from 'react';
-// import ReactDOM from 'react-dom';
 // import MyInfo from './components/MyInfo.js';
+//
 // ReactDOM.render(<MyInfo />, document.getElementById('root'));
 
 // 9.
 // Parent/Child components
-// import React from 'react';
-// import ReactDOM from 'react-dom';
 // import App from './App';
-
+//
 // ReactDOM.render(<App />, document.getElementById('root'));
 
 // 10.
 // Practice Parent/Child components
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+// import App from './App';
+//
+// ReactDOM.render(<App />, document.getElementById('root'));
 
+// 12.
+// Styling React with CSS classes
+// import App from './App';
+// import './style.css';
+//
+// ReactDOM.render(<App />, document.getElementById('root'));
+
+// 14.
+// JSX to JavaScript and Back
+// function App() {
+//   const firstName = 'Bob',
+//     lastName = 'Ziroll';
+//   return <h1>Hello {`${firstName} ${lastName}`}!</h1>;
+//
+//   const date = new Date();
+//   return (
+//     <h1>
+//       Good
+//       {(date.getHours() >= 0) & (date.getHours() < 12) ? ' Morning' : date.getHours() < 17 ? ' Afternoon' : ' Evening'}
+//     </h1>
+//   );
+// }
+// ReactDOM.render(<App />, document.getElementById('root'));
+
+// 15.
+// Inline Styles with the style property
+function App() {
+  const date = new Date(2021, 10, 16, 16);
+  let timeOfDay;
+
+  const styles = {
+    fontSize: 28,
+  };
+
+  if (date.getHours() >= 0 && date.getHours() < 12) {
+    timeOfDay = 'Morning';
+    styles.color = 'green';
+  } else if (date.getHours() <= 17) {
+    timeOfDay = 'Afternoon';
+    styles.color = 'yellow';
+  } else {
+    timeOfDay = 'Evening';
+    styles.color = 'black';
+  }
+
+  return <h1 style={styles}>Good {timeOfDay}</h1>;
+}
 ReactDOM.render(<App />, document.getElementById('root'));
