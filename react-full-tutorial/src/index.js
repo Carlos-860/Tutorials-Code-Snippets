@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App.js';
+import './style.css';
 
 // 5.
 // React DOM & JSX Practice
@@ -91,25 +93,29 @@ import ReactDOM from 'react-dom';
 
 // 15.
 // Inline Styles with the style property
-function App() {
-  const date = new Date(2021, 10, 16, 16);
-  let timeOfDay;
+// function App() {
+//   const date = new Date(2021, 10, 16, 16);
+//   let timeOfDay;
+//
+//   const styles = {
+//     fontSize: 28,
+//   };
+//
+//   if (date.getHours() >= 0 && date.getHours() < 12) {
+//     timeOfDay = 'Morning';
+//     styles.color = 'green';
+//   } else if (date.getHours() <= 17) {
+//     timeOfDay = 'Afternoon';
+//     styles.color = 'yellow';
+//   } else {
+//     timeOfDay = 'Evening';
+//     styles.color = 'black';
+//   }
+//
+//   return <h1 style={styles}>Good {timeOfDay}</h1>;
+// }
+// ReactDOM.render(<App />, document.getElementById('root'));
 
-  const styles = {
-    fontSize: 28,
-  };
-
-  if (date.getHours() >= 0 && date.getHours() < 12) {
-    timeOfDay = 'Morning';
-    styles.color = 'green';
-  } else if (date.getHours() <= 17) {
-    timeOfDay = 'Afternoon';
-    styles.color = 'yellow';
-  } else {
-    timeOfDay = 'Evening';
-    styles.color = 'black';
-  }
-
-  return <h1 style={styles}>Good {timeOfDay}</h1>;
-}
+// 19.
+// Props in React
 ReactDOM.render(<App />, document.getElementById('root'));
