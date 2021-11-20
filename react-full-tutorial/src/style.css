@@ -16,3 +16,43 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+/*22 Mapping Component Practice*/
+.product-card-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  justify-content: space-around;
+  padding: 2rem 4rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .product-card-grid {
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .product-card-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.product-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid#d5d5d5;
+}
+
+.product-card-body {
+  padding: 16px;
+}
+
+.product-card img {
+  transition: transform 350ms ease-in-out;
+}
+
+.product-card img:hover {
+  transform: scale(1.1);
+}

@@ -46,7 +46,7 @@
 
 //19.
 // Props in React
-import ContactCard from './components/ContactCard';
+// import ContactCard from './components/ContactCard';
 
 // 19.1 props and corresponding key pair values
 // function App() {
@@ -62,14 +62,135 @@ import ContactCard from './components/ContactCard';
 // export default App;
 
 // 19.2 props as a object properties
+// function App() {
+//   return (
+//     <div>
+//       <ContactCard contact={{ img: 'http://placekitten.com/400/400', name: 'Mr Whiskerperson', phone: '(212) 555 1234', email: 'mr.whiskaz@catnap.meow' }} />
+//       <ContactCard contact={{ img: 'http://placekitten.com/400/200', name: 'Fluffykins', phone: '(212) 555 2345', email: 'fluff@me.com' }} />
+//       <ContactCard contact={{ img: 'http://placekitten.com/400/350', name: 'Destroyer', phone: '(212) 555 3456', email: 'ofworlds@yahoo.com' }} />
+//       <ContactCard contact={{ img: 'http://placekitten.com/400/300', name: 'Felix', phone: '(212) 555 4567', email: 'thecat@hotmail.com' }} />
+//     </div>
+//   );
+// }
+// export default App;
+
+// 19.3 props from a json object
+/* const contactCard = [
+  {
+    id: 1,
+    img: 'http://placekitten.com/400/400',
+    name: 'Mr Whiskerperson',
+    phone: '(212) 55 1234',
+    email: 'mr.whikaz@catnap.meow',
+  },
+  {
+    id: 2,
+    img: 'http://placekitten.com/400/200',
+    name: 'Fluffykins',
+    phone: '(212) 55 2345',
+    email: 'fluff@me.com',
+  },
+  {
+    id: 3,
+    img: 'http://placekitten.com/400/350',
+    name: 'Destroyer',
+    phone: '(212) 55 3456',
+    email: 'ofworlds@yahoo.com',
+  },
+  {
+    id: 4,
+    img: 'http://placekitten.com/400/300',
+    name: 'Felix',
+    phone: '(212) 555 4567',
+    email: 'thecat@hotmail.com',
+  },
+];
+
 function App() {
   return (
     <div>
-      <ContactCard contact={{ img: 'http://placekitten.com/400/400', name: 'Mr Whiskerperson', phone: '(212) 555 1234', email: 'mr.whiskaz@catnap.meow' }} />
-      <ContactCard contact={{ img: 'http://placekitten.com/400/200', name: 'Fluffykins', phone: '(212) 555 2345', email: 'fluff@me.com' }} />
-      <ContactCard contact={{ img: 'http://placekitten.com/400/350', name: 'Destroyer', phone: '(212) 555 3456', email: 'ofworlds@yahoo.com' }} />
-      <ContactCard contact={{ img: 'http://placekitten.com/400/300', name: 'Felix', phone: '(212) 555 4567', email: 'thecat@hotmail.com' }} />
+      {contactCard.map((individualContact) => (
+        <ContactCard key={individualContact.id} contact={individualContact} />
+      ))}
     </div>
   );
 }
+export default App; 
+
+*/
+
+// 20.
+// Props & Styling Practice
+// import Joke from './components/Joke';
+// function App() {
+//   return (
+//     <>
+//       <Joke punchLine="Its hard to explain jokes to kleptomaniacs because they always take things literally." />
+//       <Joke question="What's the best thing about Switzerland?" punchLine="I don't know, but the flag is a big plus" />
+//       <Joke question="Did you hear about the mathematician who's afraid of negative numbers?" punchLine="He'll stop at nothing to avoid them." />
+//       <Joke question="Hear about the new restuarant called Karma?" punchLine="There's no menu: you get what you deserve." />
+//       <Joke question="Did you hear about the actor who fell through the floorboards?" punchLine="He was just going through a stage." />
+//       <Joke question="Did you hear about the claustrophbic astronaut?" punchLine="He just needed a little space." />
+//     </>
+//   );
+// }
+//
+// export default App;
+
+// 21.
+// Mapping Components
+// import Joke from './components/Joke';
+// import JokesData from './JokesData';
+
+// 21.1
+// Mapping components with props as key pair values
+// function App() {
+//    const JokesComponent = JokesData.map((e) => <Joke key={e.id} question={e.question} punchLine={e.punchLine} /> )
+//
+//    return (
+//      <div>
+//        {JokesComponent}
+//      </div>
+//    );
+// }
+//
+// export default App;
+
+// 21.2
+// Mapping components with props as an object
+// function App() {
+//   return (
+//     <>
+//       {JokesData.map((e) => (
+//         <Joke key={e.id} JokeData={{ question: e.question, punchLine: e.punchLine }} />
+//       ))}
+//     </>
+//   );
+// }
+//
+// export default App;
+
+// 21.3
+// Challenge with the filter function
+// function App() {
+//   const JokesComponent = JokesData.filter((e) => e.question !== undefined).map((e) => <Joke key={e.id} question={e.question} punchLine={e.punchLine} />);
+//
+//   return <div>{JokesComponent}</div>;
+// }
+//
+// export default App;
+//
+// !NB - Chain map function on to filter function
+
+// 22.
+// Mapping Components Practice
+import ProductsData from './vschoolProducts';
+import Product from './components/Product';
+
+function App() {
+  const productComponents = ProductsData.map((item) => <Product key={item.id} product={item} />);
+
+  return <div className="product-card-grid">{productComponents}</div>;
+}
+
 export default App;

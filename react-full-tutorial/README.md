@@ -23,7 +23,7 @@
 - [index.js file](./src/index.js)
 - Moved MyInfo component into [MyInfo.js file](./src/components/MyInfo.js)
 
-9. Parent/Child components
+9. Parent/Child Components
 
    - [App.js file](./App.js)
    - [Footer.js file](./Footer.js)
@@ -61,6 +61,32 @@
 
 18. Props Part 2 - Reusable Components
 
-19. Props in React [1:18:00]
+19. Props in React
 
 - [App.js File](./src/App.js)
+- [ContactCard.js file](./src/components/ContactCard.js)
+- 19.1 props and corresponding key pair values
+- 19.2 props as a object properties
+- 19.3 props from a json object
+
+20. Props & Styling Practice
+
+- [index.js file](./src/index.js)
+- [App.js file](./src/App.js)
+- [Joke.js file](./src/components/Joke.js)
+- Conditional rendering with the styles attribute in this snippet.
+
+21. Mapping Components
+
+- [JokesData.js file](./src/jokesData.js)
+- [App.js file](./src/App.js)
+- [Joke.js file](./src/components/Joke.js)
+- Mapping Components with the filter function
+
+22. Mapping Components Practice
+
+- [App.js file](./src/App.js)
+- [vschoolProducts.js file](./src/vschoolProducts.js)
+- [Products.js file](./src/components/Products.js)
+
+23. ToDo App Phase 3 [1:53:52]
