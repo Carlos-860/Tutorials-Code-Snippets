@@ -89,4 +89,18 @@
 - [vschoolProducts.js file](./src/vschoolProducts.js)
 - [Products.js file](./src/components/Products.js)
 
-23. ToDo App Phase 3 [1:53:52]
+23. ToDo App Phase 3
+
+24. Class-based Components
+
+- [App.js file](./src/App.js)
+- rce for class-based components shortcut
+- rfce for fucntional components shortcut
+- display logic should go inside the render method.
+- make sure to always add this.prop to call a props value
+
+25. Class-based Components Practice
+
+- [App.js file](./src/App.js) => Must be moved to the index.js file
+
+26. State [02:07:19]

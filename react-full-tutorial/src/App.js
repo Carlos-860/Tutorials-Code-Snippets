@@ -184,13 +184,25 @@ export default App;
 
 // 22.
 // Mapping Components Practice
-import ProductsData from './vschoolProducts';
-import Product from './components/Product';
+//import ProductsData from './vschoolProducts';
+//import Product from './components/Product';
+//
+// function App() {
+//   const productComponents = ProductsData.map((item) => <Product key={item.id} product={item} />);
+//
+//   return <div className="product-card-grid">{productComponents}</div>;
+// }
+//
+// export default App;
 
-function App() {
-  const productComponents = ProductsData.map((item) => <Product key={item.id} product={item} />);
+// 24.
+// Class-based Components
+// import React from 'react';
 
-  return <div className="product-card-grid">{productComponents}</div>;
-}
+// class App extends React.Component {
+//   render() {
+//     return <div>Code goes here!</div>;
+//   }
+// }
 
-export default App;
+// export default App;
