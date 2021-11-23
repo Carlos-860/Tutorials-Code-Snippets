@@ -101,6 +101,6 @@
 
 25. Class-based Components Practice
 
-- [App.js file](./src/App.js) => Must be moved to the index.js file
+- [index.js file](./src/index.js)
 
 26. State [02:07:19]
