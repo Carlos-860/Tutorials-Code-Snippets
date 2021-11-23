@@ -89,11 +89,12 @@
 - [vschoolProducts.js file](./src/vschoolProducts.js)
 - [Products.js file](./src/components/Products.js)
 
-23. ToDo App Phase 3
+23. Todo App Phase 3
 
 24. Class-based Components
 
 - [App.js file](./src/App.js)
+
 - rce for class-based components shortcut
 - rfce for fucntional components shortcut
 - display logic should go inside the render method.
@@ -103,4 +104,19 @@
 
 - [index.js file](./src/index.js)
 
-26. State [02:07:19]
+26. State
+
+- [App.js file](./src/App.js)
+
+- props are immutable, hence they cannot be chnaged by components that pass them.
+- intialiaze values inside the constructor.
+
+27. State Practice 2
+
+- [App.js file](./src/App.js)
+
+- state with conditional rendering
+
+29. Todo App Phase 4
+
+30. Changing State [02:27:19]

@@ -206,3 +206,72 @@ export default App;
 // }
 
 // export default App;
+
+// 25.
+// State
+// import React, { Component } from 'react';
+
+// class App extends Component {
+//   constructor() {
+//     super();
+//     this.state = {
+//       answer: 'Yes',
+//     };
+//   }
+
+//   render() {
+//     return <div>Is state important to know? {this.state.answer}</div>;
+//   }
+// }
+
+// export default App;
+
+// 26.
+// State Practice
+// import React, { Component } from 'react';
+
+// class App extends Component {
+//   constructor() {
+//     super();
+
+//     this.state = {
+//       name: 'Bob',
+//       age: 27,
+//     };
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <h1>{this.state.name}</h1>
+//         <h1>{this.state.age} years old</h1>
+//       </div>
+//     );
+//   }
+// }
+
+// export default App;
+
+// 27.
+// State Practice 2
+// import React, { Component } from 'react';
+//
+// class App extends Component {
+//   constructor() {
+//     super();
+//
+//     this.state = {
+//       isLoggedIn: true,
+//     };
+//   }
+//
+//   render() {
+//     return (
+//       <div>
+//         <h1>You are currently logged {this.state.isLoggedIn ? 'in' : 'out'}</h1>
+//       </div>
+//     );
+//   }
+// }
+//
+// export default App;
