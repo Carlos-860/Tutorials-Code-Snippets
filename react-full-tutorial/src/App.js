@@ -207,7 +207,7 @@ export default App;
 
 // export default App;
 
-// 25.
+// 26.
 // State
 // import React, { Component } from 'react';
 
@@ -226,7 +226,7 @@ export default App;
 
 // export default App;
 
-// 26.
+// 27.
 // State Practice
 // import React, { Component } from 'react';
 
@@ -252,7 +252,7 @@ export default App;
 
 // export default App;
 
-// 27.
+// 28.
 // State Practice 2
 // import React, { Component } from 'react';
 //
@@ -275,3 +275,32 @@ export default App;
 // }
 //
 // export default App;
+
+// 30.
+// Handling Events in React
+import React, { Component } from 'react';
+
+class App extends Component {
+  render() {
+    function handleClick() {
+      console.log('Clicked');
+    }
+
+    function handleMouseOver() {
+      console.log('Hovered');
+    }
+
+    return (
+      <div>
+        <img src="https://www.fillmurray.com/200/100" onMouseOver={handleMouseOver} />
+        <br />
+        <br />
+        <button type="button" onClick={handleClick}>
+          Click Me
+        </button>
+      </div>
+    );
+  }
+}
+
+export default App;

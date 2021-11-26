@@ -111,7 +111,11 @@
 - props are immutable, hence they cannot be chnaged by components that pass them.
 - intialiaze values inside the constructor.
 
-27. State Practice 2
+27. State Practice
+
+- [App.js file](./src/App.js)
+
+28. State Practice 2
 
 - [App.js file](./src/App.js)
 
@@ -119,4 +123,13 @@
 
 29. Todo App Phase 4
 
-30. Changing State [02:27:19]
+30. Handling Events in React [02:22:14]
+
+- [App.js file](./src/App.js)
+
+- all events make use of camel case convetion in React
+- make sure not to add parenthesis or else it invokes the function
+
+31. Todo App Phase 4
+
+32.
