@@ -123,13 +123,19 @@
 
 29. Todo App Phase 4
 
-30. Handling Events in React [02:22:14]
+30. Handling Events in React
 
 - [App.js file](./src/App.js)
 
 - all events make use of camel case convetion in React
 - make sure not to add parenthesis or else it invokes the function
 
-31. Todo App Phase 4
+31. Todo App Phase 5
 
-32.
+32. Changing State
+
+- [App.js file](./src/App.js)
+
+- started with setState
+
+33. Todo App Phase 6 [02:39:40]

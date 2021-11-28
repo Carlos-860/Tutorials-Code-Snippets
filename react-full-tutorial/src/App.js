@@ -278,26 +278,61 @@ export default App;
 
 // 30.
 // Handling Events in React
+// import React, { Component } from 'react';
+//
+// class App extends Component {
+//   render() {
+//     function handleClick() {
+//       console.log('Clicked');
+//     }
+//
+//     function handleMouseOver() {
+//       console.log('Hovered');
+//     }
+//
+//     return (
+//       <div>
+//         <img src="https://www.fillmurray.com/200/100" onMouseOver={handleMouseOver} />
+//         <br />
+//         <br />
+//         <button type="button" onClick={handleClick}>
+//           Click Me
+//         </button>
+//       </div>
+//     );
+//   }
+// }
+//
+// export default App;
+
+// 32.
+// Changing State
 import React, { Component } from 'react';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      count: 0,
+    };
+
+    // When ever you use a class method (eg. handleClick method) make sure to bind it
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState((prevState) => {
+      return {
+        count: prevState.count + 1,
+      };
+    });
+  }
+
   render() {
-    function handleClick() {
-      console.log('Clicked');
-    }
-
-    function handleMouseOver() {
-      console.log('Hovered');
-    }
-
     return (
       <div>
-        <img src="https://www.fillmurray.com/200/100" onMouseOver={handleMouseOver} />
-        <br />
-        <br />
-        <button type="button" onClick={handleClick}>
-          Click Me
-        </button>
+        <h1>{this.state.count}</h1>
+        <button onClick={this.handleClick}>Change!</button>
       </div>
     );
   }
