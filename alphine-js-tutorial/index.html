@@ -11,7 +11,18 @@
     <script defer src="https://unpkg.com/alpinejs@3.7.1/dist/cdn.min.js"></script>
   </head>
   <body>
-    <section style="min-height: 100vh; display: grid; place-items: center; background-color: lightskyblue">A basic Alphine Component</section>
+    <!-- 2. Dropdown Explanation -->
+    <section style="min-height: 100vh; display: grid; place-items: center; padding: 2rem; background-color: lightskyblue">
+      <div class="max-w-screen-md mx-auto">
+        <h2 class="mb-4 text-3xl font-semibold uppercase">A Basic Alphine Component</h2>
+
+        <ul>
+          <li class="mt-2"><strong>1. </strong> <em class="mx-2">x-data="{ isOpen: false }"</em> on the enclosing element.</li>
+          <li class="mt-2"><strong>2. </strong> <em class="mx-2">x-show="isOpen"</em> on the element you want to toggle.</li>
+          <li class="mt-2"><strong>3. </strong> <em class="mx-2">@click="isOpen = !isOpen"</em> on the button element in order to toggle.</li>
+        </ul>
+      </div>
+    </section>
 
     <!-- 1. Toggle -->
     <section style="min-height: 100vh; display: grid; place-items: center">
@@ -24,7 +35,7 @@
 
     <!-- 2. Dropdown Explanation -->
     <section style="min-height: 100vh; display: grid; place-items: center; padding: 2rem; background-color: lightskyblue">
-      <div>
+      <div class="max-w-screen-md mx-auto">
         <h2 class="mb-4 text-3xl font-semibold uppercase">Dropwdown</h2>
 
         <ul>
@@ -105,26 +116,26 @@
       </div>
     </section>
 
-    <!-- 2. Modals and x-ref Explanation -->
-    <section style="min-height: 100vh; display: grid; place-items: center; background-color: lightskyblue">
-      <div>
+    <!-- 3. Modals and x-ref Explanation -->
+    <section style="min-height: 100vh; display: grid; place-items: center; padding: 2rem; background-color: lightskyblue">
+      <div class="max-w-screen-md mx-auto">
         <h2 class="mb-4 text-3xl font-semibold uppercase">Modals and x-ref</h2>
 
         <ul>
           <li class="mt-2"><strong>1. </strong> <em class="mx-2">x-data="{ isOpen: false }"</em> on the element that encloses the button and modal.</li>
+          <li class="mt-2"><strong>2. </strong> <em class="mx-2">x-show="isOpen"</em> on the position absolute element (modal).</li>
+          <li class="mt-2"><strong>3. </strong> <em class="mx-2">@click="isOpen = true; ..."</em> on the open button.</li>
+          <li class="mt-2"><strong>4. </strong> <em class="mx-2"> @click="isOpen = false"</em> on the close button.</li>
 
-          <!-- <li class="mt-2"><strong>1. </strong> <em class="mx-2">x-data="{ isOpen: false }"</em> on the position relative element.</li>
-          <li class="mt-2"><strong>2. </strong> <em class="mx-2">x-show="isOpen"</em> on the position absolute element (dropdown).</li>
-          <li class="mt-2"><strong>3. </strong> <em class="mx-2">@click="isOpen = !isOpen"</em> on the button element in order to toggle the dropdown.</li>
-
-          <li class="mt-4"><strong>4. </strong> <em class="mx-2"> @click.away="isOpen = false"</em> on the dropdown element in order to close the dropdown when you click outside its area.</li>
-          <li class="mt-4"><strong>5. </strong> <em class="mx-2"> @keydown.escape="isOpen = false"</em> on the button element in order to close the dropdown when you tap escape on button focus.</li> -->
+          <li class="mt-4"><strong>5. </strong> <em class="mx-2">x-ref="modalCloseButton"</em> on the button you want to make reference to.</li>
+          <li class="mt-2"><strong>6. </strong> <em class="mx-2">"... $nextTick(()=> $refs.modalCloseButton.focus())"</em> on the button the reference callback function should be called.</li>
         </ul>
       </div>
     </section>
 
+    <!-- 3. Modals and x-ref -->
     <section style="min-height: 100vh; display: grid; place-items: center">
-      <div class="relative w-full h-full bg-gray-400 grid justify-center items-center text-center">
+      <div class="relative w-full h-full bg-gradient-to-r from-yellow-500 to-yellow-800 grid justify-center items-center text-center">
         <div class="container mx-auto px-4 xl:px-64">
           <h2 class="text-2xl font-bold">Modal</h2>
 
@@ -141,13 +152,91 @@
                   </div>
 
                   <div class="mt-4">
-                    <button class="bg-blue-700 px-4 py-3 mt-4 text-white text-sm rounded" @click="isOpen = false" x-ref="modalCloseButton">Close Modal</button>
+                    <button class="bg-blue-700 shadow-md px-4 py-3 mt-4 text-white text-sm rounded focus:outline focus:outline-2 outline-blue-300" @click="isOpen = false" x-ref="modalCloseButton">
+                      Close Modal
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- 4. Sidebar Explanation -->
+    <section style="min-height: 100vh; display: grid; place-items: center; padding: 2rem; background-color: lightskyblue">
+      <div class="max-w-screen-md mx-auto">
+        <h2 class="mb-4 text-3xl font-semibold uppercase">Sidebar</h2>
+
+        <ul>
+          <li class="mt-2"><strong>1. </strong> <em class="mx-2">x-data="{ isOpen: false }"</em> on the element that encloses the menu button and sidebar.</li>
+          <li class="mt-2"><strong>2. </strong> <em class="mx-2">x-show="isOpen"</em> on the position absolute element (sidebar).</li>
+          <li class="mt-2"><strong>3. </strong> <em class="mx-2">@click="isOpen = true;"</em> on the open button.</li>
+          <li class="mt-2"><strong>4. </strong> <em class="mx-2">@click="isOpen = false;"</em> on the close button.</li>
+          <li class="mt-2"><strong>5. </strong> <em class="mx-2"> @click.away="isOpen = false"</em> on the sidebar element in order to close the sidebar when you click outside its area.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4. Sidebar -->
+    <section class="relative" style="min-height: 100vh">
+      <div class="bg-gray-300 text-gray-800">
+        <header class="border-t-4 border-blue-700 bg-white shadow-md">
+          <nav class="container mx-auto p-4 flex items-center justify-between" x-data="{ isOpen: false }" }>
+            <div class="flex">
+              <button @click="isOpen = true">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="absolute top-0 left-0 bg-white border border-right h-full w-48" x-show="isOpen" @click.away="isOpen = false">
+              <div class="flex justify-end">
+                <button class="text-2xl mr-3 mt-1" @click="isOpen = false">&times;</button>
+              </div>
+
+              <ul>
+                <li>
+                  <a href="#" class="flex items-center px-3 py-3 hover:bg-gray-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+
+                    Account
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="flex items-center px-3 py-3 hover:bg-gray-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                      />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+
+                    Settings
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="flex items-center px-3 py-3 hover:bg-gray-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                    </svg>
+
+                    Logout
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
       </div>
     </section>
   </body>
