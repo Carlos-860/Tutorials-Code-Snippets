@@ -324,5 +324,60 @@
         </div>
       </div>
     </section>
+
+    <!-- 6. Image Selection Explanation -->
+    <section style="min-height: 100vh; display: grid; place-items: center; padding: 2rem; background-color: lightskyblue">
+      <div class="max-w-screen-md mx-auto">
+        <h2 class="mb-4 text-3xl font-semibold uppercase">Image Selection</h2>
+
+        <ul>
+          <!-- <li class="mt-2"><strong>1. </strong> <em class="mx-2">x-data="{ tab: 'tab1' }"</em> to set the first tab to active.</li>
+          <li class="mt-4"><strong>2. </strong> <em class="mx-2">@click.prevent="tab = 'tab1'"</em> set the first tab active on click.</li>
+          <li class="mt-2"><strong>3. </strong> <em class="mx-2">@click.prevent="tab = 'tab2'"</em> set the second tab active on click.</li>
+          <li class="mt-2"><strong>4. </strong> <em class="mx-2">@click.prevent="tab = 'tab3'"</em> set the third tab active on click.</li>
+
+          <li class="mt-4"><strong>5. </strong> <em class="mx-2">x-show="tab === 'tab1'"</em> whether to show or hide tab based on active tab.</li>
+          <li class="mt-2"><strong>6. </strong> <em class="mx-2">x-show="tab === 'tab2'"</em> whether to show or hide tab based on active tab.</li>
+          <li class="mt-2"><strong>7. </strong> <em class="mx-2">x-show="tab === 'tab3'"</em> whether to show or hide tab based on active tab.</li>
+
+          <li class="mt-4">
+            <strong>8. </strong> <em class="mx-2">:class="{ 'bg-white text-blue-700 border-l border-t border-r' : tab === 'tab1' }"</em> conditional rendering label classes based on active tab.
+          </li>
+          <li class="mt-2">
+            <strong>9. </strong> <em class="mx-2">:class="{ 'bg-white text-blue-700 border-l border-t border-r' : tab === 'tab2' }"</em> conditional rendering label classes based on active tab.
+          </li>
+          <li class="mt-2">
+            <strong>10. </strong> <em class="mx-2">:class="{ 'bg-white text-blue-700 border-l border-t border-r' : tab === 'tab3' }"</em> conditional rendering label classes based on active tab.
+          </li> -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- 6. Image Selection -->
+    <section style="min-height: 100vh">
+      <div class="bg-gray-400">
+        <div class="flex flex-col items-center gap-4 mx-auto p-4" x-data="{ image: 'image1' }">
+          <div>
+            <img src="https://placeimg.com/640/480/any" alt="" width="360" x-show="image === 'image1'" />
+            <img src="https://placeimg.com/640/480/nature" alt="" width="360" x-show="image === 'image2'" />
+            <img src="https://placeimg.com/640/480/tech" alt="" width="360" x-show="image === 'image3'" />
+          </div>
+
+          <div class="flex items-center mt-4">
+            <a href="#" class="border border-transparent hover:border-blue-500" :class="{ 'border-blue-500' : image === 'image1'}" @click.prevent="image = 'image1'">
+              <img src="https://placeimg.com/640/480/any" alt="" width="60" />
+            </a>
+
+            <a href="#" class="border border-transparent hover:border-blue-500 mx-2" :class="{ 'border-blue-500' : image === 'image2'}" @click.prevent="image = 'image2'">
+              <img src="https://placeimg.com/640/480/nature" alt="" width="60" />
+            </a>
+
+            <a href="#" class="border border-transparent hover:border-blue-500" :class="{ 'border-blue-500' : image === 'image3'}" @click.prevent="image = 'image3'">
+              <img src="https://placeimg.com/640/480/tech" alt="" width="60" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
