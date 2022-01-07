@@ -138,4 +138,6 @@
 
 - started with setState
 
-33. Todo App Phase 6 [02:39:40]
+33. Todo App Phase 6
+
+34. Lifecycle Methods [02:47:25]

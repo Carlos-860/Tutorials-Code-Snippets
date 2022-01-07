@@ -11,7 +11,7 @@
     <script defer src="https://unpkg.com/alpinejs@3.7.1/dist/cdn.min.js"></script>
   </head>
   <body>
-    <!-- 2. Dropdown Explanation -->
+    <!-- 1. Toggle Explanation -->
     <section style="min-height: 100vh; display: grid; place-items: center; padding: 2rem; background-color: lightskyblue">
       <div class="max-w-screen-md mx-auto">
         <h2 class="mb-4 text-3xl font-semibold uppercase">A Basic Alphine Component</h2>
@@ -327,35 +327,48 @@
 
     <!-- 6. Image Selection Explanation -->
     <section style="min-height: 100vh; display: grid; place-items: center; padding: 2rem; background-color: lightskyblue">
-      <div class="max-w-screen-md mx-auto">
+      <div class="max-w-screen-lg mx-auto">
         <h2 class="mb-4 text-3xl font-semibold uppercase">Image Selection</h2>
 
         <ul>
-          <!-- <li class="mt-2"><strong>1. </strong> <em class="mx-2">x-data="{ tab: 'tab1' }"</em> to set the first tab to active.</li>
-          <li class="mt-4"><strong>2. </strong> <em class="mx-2">@click.prevent="tab = 'tab1'"</em> set the first tab active on click.</li>
-          <li class="mt-2"><strong>3. </strong> <em class="mx-2">@click.prevent="tab = 'tab2'"</em> set the second tab active on click.</li>
-          <li class="mt-2"><strong>4. </strong> <em class="mx-2">@click.prevent="tab = 'tab3'"</em> set the third tab active on click.</li>
+          <li class="mt-2"><strong>1. </strong> <em class="mx-2">x-data="{ image: 'image1' }"</em> to declare a new Alphine component and its data for a block of HTML.</li>
 
-          <li class="mt-4"><strong>5. </strong> <em class="mx-2">x-show="tab === 'tab1'"</em> whether to show or hide tab based on active tab.</li>
-          <li class="mt-2"><strong>6. </strong> <em class="mx-2">x-show="tab === 'tab2'"</em> whether to show or hide tab based on active tab.</li>
-          <li class="mt-2"><strong>7. </strong> <em class="mx-2">x-show="tab === 'tab3'"</em> whether to show or hide tab based on active tab.</li>
+          <li class="mt-4"><strong>2. </strong> <em class="mx-2">x-show="image === 'image1'"</em> to Toggle the visibility of an element (First Large Image).</li>
+          <li class="mt-2"><strong>3. </strong> <em class="mx-2">x-show="image === 'image2'"</em> to Toggle the visibility of an element (Second Large Image).</li>
+          <li class="mt-2"><strong>4. </strong> <em class="mx-2">x-show="image === 'image3'"</em> to Toggle the visibility of an element (Third Large Image).</li>
 
           <li class="mt-4">
-            <strong>8. </strong> <em class="mx-2">:class="{ 'bg-white text-blue-700 border-l border-t border-r' : tab === 'tab1' }"</em> conditional rendering label classes based on active tab.
+            <strong>5. </strong> <em class="mx-2">x-on:click.prevent="image = 'image1'" <strong>OR</strong> @click.prevent="image = 'image1'" </em> to listen for browser events on an element (First
+            Thumbnail Image).
           </li>
           <li class="mt-2">
-            <strong>9. </strong> <em class="mx-2">:class="{ 'bg-white text-blue-700 border-l border-t border-r' : tab === 'tab2' }"</em> conditional rendering label classes based on active tab.
+            <strong>6. </strong> <em class="mx-2">x-on:click.prevent="image = 'image2'" <strong>OR</strong> @click.prevent="image = 'image2'" </em> to listen for browser events on an element (Second
+            Thumbnail Image).
           </li>
           <li class="mt-2">
-            <strong>10. </strong> <em class="mx-2">:class="{ 'bg-white text-blue-700 border-l border-t border-r' : tab === 'tab3' }"</em> conditional rendering label classes based on active tab.
-          </li> -->
+            <strong>7. </strong> <em class="mx-2">x-on:click.prevent="image = 'image3'" <strong>OR</strong> @click.prevent="image = 'image3'" </em> to listen for browser events on an element (Third
+            Thumbnail Image).
+          </li>
+
+          <li class="mt-4">
+            <strong>8. </strong> <em class="mx-2">x-bind:class="{ 'border-blue-500' : image === 'image1'}" <strong>OR</strong> :class="{ 'border-blue-500' : image === 'image1'}" </em> to dynamically
+            set HTML attributes on an element.
+          </li>
+          <li class="mt-2">
+            <strong>9. </strong> <em class="mx-2">x-bind:class="{ 'border-blue-500' : image === 'image2'}" <strong>OR</strong> :class="{ 'border-blue-500' : image === 'image2'}" </em> to dynamically
+            set HTML attributes on an element.
+          </li>
+          <li class="mt-2">
+            <strong>10. </strong> <em class="mx-2">x-bind:class="{ 'border-blue-500' : image === 'image3'}" <strong>OR</strong> :class="{ 'border-blue-500' : image === 'image3'}" </em> to dynamically
+            set HTML attributes on an element.
+          </li>
         </ul>
       </div>
     </section>
 
     <!-- 6. Image Selection -->
     <section style="min-height: 100vh">
-      <div class="bg-gray-400">
+      <div class="h-screen bg-gray-400">
         <div class="flex flex-col items-center gap-4 mx-auto p-4" x-data="{ image: 'image1' }">
           <div>
             <img src="https://placeimg.com/640/480/any" alt="" width="360" x-show="image === 'image1'" />
@@ -379,5 +392,96 @@
         </div>
       </div>
     </section>
+
+    <!-- 7. Scroll Detection Explanation -->
+    <section style="min-height: 100vh; display: grid; place-items: center; padding: 2rem; background-color: lightskyblue">
+      <div class="max-w-screen-lg mx-auto">
+        <h2 class="mb-4 text-3xl font-semibold uppercase">Scroll Detection</h2>
+
+        <!-- <ul>
+          <li class="mt-2"><strong>1. </strong> <em class="mx-2">x-data="{ image: 'image1' }"</em> to declare a new Alphine component and its data for a block of HTML.</li>
+
+          <li class="mt-4"><strong>2. </strong> <em class="mx-2">x-show="image === 'image1'"</em> to Toggle the visibility of an element (First Large Image).</li>
+          <li class="mt-2"><strong>3. </strong> <em class="mx-2">x-show="image === 'image2'"</em> to Toggle the visibility of an element (Second Large Image).</li>
+          <li class="mt-2"><strong>4. </strong> <em class="mx-2">x-show="image === 'image3'"</em> to Toggle the visibility of an element (Third Large Image).</li>
+
+          <li class="mt-4">
+            <strong>5. </strong> <em class="mx-2">x-on:click.prevent="image = 'image1'" <strong>OR</strong> @click.prevent="image = 'image1'" </em> to listen for browser events on an element (First
+            Thumbnail Image).
+          </li>
+          <li class="mt-2">
+            <strong>6. </strong> <em class="mx-2">x-on:click.prevent="image = 'image2'" <strong>OR</strong> @click.prevent="image = 'image2'" </em> to listen for browser events on an element (Second
+            Thumbnail Image).
+          </li>
+          <li class="mt-2">
+            <strong>7. </strong> <em class="mx-2">x-on:click.prevent="image = 'image3'" <strong>OR</strong> @click.prevent="image = 'image3'" </em> to listen for browser events on an element (Third
+            Thumbnail Image).
+          </li>
+
+          <li class="mt-4">
+            <strong>8. </strong> <em class="mx-2">x-bind:class="{ 'border-blue-500' : image === 'image1'}" <strong>OR</strong> :class="{ 'border-blue-500' : image === 'image1'}" </em> to dynamically
+            set HTML attributes on an element.
+          </li>
+          <li class="mt-2">
+            <strong>9. </strong> <em class="mx-2">x-bind:class="{ 'border-blue-500' : image === 'image2'}" <strong>OR</strong> :class="{ 'border-blue-500' : image === 'image2'}" </em> to dynamically
+            set HTML attributes on an element.
+          </li>
+          <li class="mt-2">
+            <strong>10. </strong> <em class="mx-2">x-bind:class="{ 'border-blue-500' : image === 'image3'}" <strong>OR</strong> :class="{ 'border-blue-500' : image === 'image3'}" </em> to dynamically
+            set HTML attributes on an element.
+          </li>
+        </ul> -->
+      </div>
+    </section>
+
+    <!-- 7. Scroll Detection -->
+    <section style="min-height: 100vh">
+      <div class="h-screen bg-gray-400 relative" x-data="{ atTop: true }">
+        <nav class="px-2 sm:px-4 py-2.5 w-full sticky top-0" :class="{ 'bg-white border-gray-200 shadow-md': !atTop }" @scroll.window="atTop = (window.pageYOffset > 7975 ? false : true)">
+          <div class="container flex flex-wrap justify-between items-center mx-auto">
+            <a href="#" class="flex">
+              <svg class="mr-3 h-10" viewBox="0 0 52 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.87695 53H28.7791C41.5357 53 51.877 42.7025 51.877 30H24.9748C12.2182 30 1.87695 40.2975 1.87695 53Z" fill="#76A9FA"></path>
+                <path
+                  d="M0.000409561 32.1646L0.000409561 66.4111C12.8618 66.4111 23.2881 55.9849 23.2881 43.1235L23.2881 8.87689C10.9966 8.98066 1.39567 19.5573 0.000409561 32.1646Z"
+                  fill="#A4CAFE"
+                ></path>
+                <path d="M50.877 5H23.9748C11.2182 5 0.876953 15.2975 0.876953 28H27.7791C40.5357 28 50.877 17.7025 50.877 5Z" fill="#1C64F2"></path>
+              </svg>
+              <span class="self-center text-lg font-semibold whitespace-nowrap">FlowBite</span>
+            </a>
+
+            <div class="flex items-center md:order-2">
+              <button
+                type="button"
+                class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300"
+                id="user-menu-button"
+                aria-expanded="false"
+                data-dropdown-toggle="dropdown"
+              >
+                <span class="sr-only">Open user menu</span>
+                <img
+                  class="inline-block h-8 w-8 rounded-full ring-2 ring-white"
+                  src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  alt=""
+                />
+              </button>
+            </div>
+          </div>
+        </nav>
+
+        <div class="container mx-auto p-4">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga tempora quaerat sunt similique pariatur deserunt sequi aliquam aliquid maxime perspiciatis ducimus facilis sapiente debitis
+          distinctio, eveniet nam architecto voluptates necessitatibus, aperiam quis, natus itaque doloremque fugiat doloribus? Minus aliquid aperiam nesciunt asperiores voluptatibus odio? Neque
+          quidem iure, odit magni commodi nihil officiis vel perspiciatis, natus sit veniam illum necessitatibus hic aut quisquam magnam quam explicabo! Perferendis dolorem, laudantium id inventore
+          voluptatum ipsam? Cupiditate, expedita. A quo nobis minus vitae placeat odio numquam, enim accusamus corporis, quibusdam quasi distinctio excepturi praesentium sapiente maiores deleniti. Qui
+          iusto ratione nobis cumque voluptates repellat tempore, debitis, fugiat deleniti, a ipsam magni? Voluptas ullam commodi dignissimos amet sapiente officia libero illum ab ducimus ex
+          repellendus facilis, labore sint, minus deserunt dolore ea hic doloribus accusantium.
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Accordian Toggle Explanation -->
+    <section style="min-height: 100vh; display: grid; place-items: center; padding: 2rem; background-color: lightskyblue"></section>
   </body>
 </html>
