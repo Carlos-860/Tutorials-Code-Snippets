@@ -437,7 +437,9 @@
     <!-- 7. Scroll Detection -->
     <section style="min-height: 100vh">
       <div class="h-screen bg-gray-400 relative" x-data="{ atTop: true }">
-        <nav class="px-2 sm:px-4 py-2.5 w-full sticky top-0" :class="{ 'bg-white border-gray-200 shadow-md': !atTop }" @scroll.window="atTop = (window.pageYOffset > 7975 ? false : true)">
+        <nav class="px-2 sm:px-4 py-2.5 w-full sticky top-0" :class="{ 'bg-white border-gray-200 shadow-md': !atTop }" @scroll.window="atTop = $el.getBoundingClientRect().y > 0 ? true : false">
+          <!-- @scroll.window="atTop = (window.pageYOffset > 7975 ? false : true)" -->
+
           <div class="container flex flex-wrap justify-between items-center mx-auto">
             <a href="#" class="flex">
               <svg class="mr-3 h-10" viewBox="0 0 52 72" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -481,7 +483,200 @@
       </div>
     </section>
 
-    <!-- 8. Accordian Toggle Explanation -->
-    <section style="min-height: 100vh; display: grid; place-items: center; padding: 2rem; background-color: lightskyblue"></section>
+    <!-- 8.1 Accordian Toggle & Loops Explanation -->
+    <section style="min-height: 100vh; display: grid; place-items: center; padding: 2rem; background-color: lightskyblue">
+      <div class="max-w-screen-lg mx-auto">
+        <h2 class="mb-4 text-3xl font-semibold uppercase">Accordian Toggle & Loops Part I</h2>
+
+        <!-- <ul>
+          <li class="mt-2"><strong>1. </strong> <em class="mx-2">x-data="{ image: 'image1' }"</em> to declare a new Alphine component and its data for a block of HTML.</li>
+
+          <li class="mt-4"><strong>2. </strong> <em class="mx-2">x-show="image === 'image1'"</em> to Toggle the visibility of an element (First Large Image).</li>
+          <li class="mt-2"><strong>3. </strong> <em class="mx-2">x-show="image === 'image2'"</em> to Toggle the visibility of an element (Second Large Image).</li>
+          <li class="mt-2"><strong>4. </strong> <em class="mx-2">x-show="image === 'image3'"</em> to Toggle the visibility of an element (Third Large Image).</li>
+
+          <li class="mt-4">
+            <strong>5. </strong> <em class="mx-2">x-on:click.prevent="image = 'image1'" <strong>OR</strong> @click.prevent="image = 'image1'" </em> to listen for browser events on an element (First
+            Thumbnail Image).
+          </li>
+          <li class="mt-2">
+            <strong>6. </strong> <em class="mx-2">x-on:click.prevent="image = 'image2'" <strong>OR</strong> @click.prevent="image = 'image2'" </em> to listen for browser events on an element (Second
+            Thumbnail Image).
+          </li>
+          <li class="mt-2">
+            <strong>7. </strong> <em class="mx-2">x-on:click.prevent="image = 'image3'" <strong>OR</strong> @click.prevent="image = 'image3'" </em> to listen for browser events on an element (Third
+            Thumbnail Image).
+          </li>
+
+          <li class="mt-4">
+            <strong>8. </strong> <em class="mx-2">x-bind:class="{ 'border-blue-500' : image === 'image1'}" <strong>OR</strong> :class="{ 'border-blue-500' : image === 'image1'}" </em> to dynamically
+            set HTML attributes on an element.
+          </li>
+          <li class="mt-2">
+            <strong>9. </strong> <em class="mx-2">x-bind:class="{ 'border-blue-500' : image === 'image2'}" <strong>OR</strong> :class="{ 'border-blue-500' : image === 'image2'}" </em> to dynamically
+            set HTML attributes on an element.
+          </li>
+          <li class="mt-2">
+            <strong>10. </strong> <em class="mx-2">x-bind:class="{ 'border-blue-500' : image === 'image3'}" <strong>OR</strong> :class="{ 'border-blue-500' : image === 'image3'}" </em> to dynamically
+            set HTML attributes on an element.
+          </li>
+        </ul> -->
+      </div>
+    </section>
+
+    <!-- 8.1 Accordian Toggle & Loops  -->
+    <section style="min-height: 100vh">
+      <div class="text-gray-800">
+        <div
+          class="container mx-auto p-2"
+          x-data="{ 
+          faqs: [
+            {
+              id: '0',
+              question: 'Why do i need Alphine JS?',
+              answer: '1. Lorem Ipsum',
+              isOpen: false,
+            },   
+
+            {
+              id: '1',
+              question: 'Importance of Alphine JS.',
+              answer: '2. Lorem Ipsum',
+              isOpen: false,
+            },
+            
+            {
+              id: '2',
+              question: 'Why learn on scribma?',
+              answer: '3. Lorem Ipsum',
+              isOpen: false,
+            },
+          ],
+          opened_tab: null
+         }"
+        >
+          <h2 class="text-2xl font-bold">ONE FAQ OPEN AT A TIME</h2>
+
+          <div class="leading-loosed text-lg mt-6">
+            <template x-for="faq in faqs" :key="faq.id">
+              <div class="">
+                <button
+                  class="w-full font-bold border-b border-gray-400 py-3 flex justify-between items-center mt-4"
+                  @click="faq.isOpen = !faq.isOpen; opened_tab = opened_tab == faq.id ? null : faq.id;"
+                >
+                  <div x-text="faq.question"></div>
+
+                  <svg x-show="opened_tab == null || opened_tab !== faq.id" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                  </svg>
+
+                  <svg x-show="opened_tab == faq.id; " xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6" />
+                  </svg>
+                </button>
+
+                <div class="text-gray-700 text-sm mt-2" x-text="faq.answer" x-show="opened_tab == faq.id"></div>
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8.2 Accordian Toggle & Loops Explanation -->
+    <section style="min-height: 100vh; display: grid; place-items: center; padding: 2rem; background-color: lightskyblue">
+      <div class="max-w-screen-lg mx-auto">
+        <h2 class="mb-4 text-3xl font-semibold uppercase">Accordian Toggle & Loops Part II</h2>
+
+        <!-- <ul>
+              <li class="mt-2"><strong>1. </strong> <em class="mx-2">x-data="{ image: 'image1' }"</em> to declare a new Alphine component and its data for a block of HTML.</li>
+    
+              <li class="mt-4"><strong>2. </strong> <em class="mx-2">x-show="image === 'image1'"</em> to Toggle the visibility of an element (First Large Image).</li>
+              <li class="mt-2"><strong>3. </strong> <em class="mx-2">x-show="image === 'image2'"</em> to Toggle the visibility of an element (Second Large Image).</li>
+              <li class="mt-2"><strong>4. </strong> <em class="mx-2">x-show="image === 'image3'"</em> to Toggle the visibility of an element (Third Large Image).</li>
+    
+              <li class="mt-4">
+                <strong>5. </strong> <em class="mx-2">x-on:click.prevent="image = 'image1'" <strong>OR</strong> @click.prevent="image = 'image1'" </em> to listen for browser events on an element (First
+                Thumbnail Image).
+              </li>
+              <li class="mt-2">
+                <strong>6. </strong> <em class="mx-2">x-on:click.prevent="image = 'image2'" <strong>OR</strong> @click.prevent="image = 'image2'" </em> to listen for browser events on an element (Second
+                Thumbnail Image).
+              </li>
+              <li class="mt-2">
+                <strong>7. </strong> <em class="mx-2">x-on:click.prevent="image = 'image3'" <strong>OR</strong> @click.prevent="image = 'image3'" </em> to listen for browser events on an element (Third
+                Thumbnail Image).
+              </li>
+    
+              <li class="mt-4">
+                <strong>8. </strong> <em class="mx-2">x-bind:class="{ 'border-blue-500' : image === 'image1'}" <strong>OR</strong> :class="{ 'border-blue-500' : image === 'image1'}" </em> to dynamically
+                set HTML attributes on an element.
+              </li>
+              <li class="mt-2">
+                <strong>9. </strong> <em class="mx-2">x-bind:class="{ 'border-blue-500' : image === 'image2'}" <strong>OR</strong> :class="{ 'border-blue-500' : image === 'image2'}" </em> to dynamically
+                set HTML attributes on an element.
+              </li>
+              <li class="mt-2">
+                <strong>10. </strong> <em class="mx-2">x-bind:class="{ 'border-blue-500' : image === 'image3'}" <strong>OR</strong> :class="{ 'border-blue-500' : image === 'image3'}" </em> to dynamically
+                set HTML attributes on an element.
+              </li>
+            </ul> -->
+      </div>
+    </section>
+
+    <!-- 8.2 Accordian Toggle & Loops  -->
+    <section style="min-height: 100vh">
+      <div class="text-gray-800">
+        <div
+          class="container mx-auto p-2"
+          x-data="{ 
+              faqs: [
+                {
+                  id: '0',
+                  question: 'Why do i need Alphine JS?',
+                  answer: '1. Lorem Ipsum',
+                  isOpen: false,
+                },   
+    
+                {
+                  id: '1',
+                  question: 'Importance of Alphine JS.',
+                  answer: '2. Lorem Ipsum',
+                  isOpen: false,
+                },
+                
+                {
+                  id: '2',
+                  question: 'Why learn on scribma?',
+                  answer: '3. Lorem Ipsum',
+                  isOpen: false,
+                },
+              ]
+             }"
+        >
+          <h2 class="text-2xl font-bold">MULTIPLE FAQ OPEN AT A TIME</h2>
+
+          <div class="leading-loosed text-lg mt-6">
+            <template x-for="faq in faqs" :key="faq.id">
+              <div class="">
+                <button class="w-full font-bold border-b border-gray-400 py-3 flex justify-between items-center mt-4" @click="faq.isOpen = !faq.isOpen;">
+                  <div x-text="faq.question"></div>
+
+                  <svg x-show="!faq.isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                  </svg>
+
+                  <svg x-show="faq.isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6" />
+                  </svg>
+                </button>
+
+                <div class="text-gray-700 text-sm mt-2" x-text="faq.answer" x-show="faq.isOpen"></div>
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
