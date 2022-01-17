@@ -788,10 +788,22 @@
             <h2 class="text-2xl font-bold">Todo App</h2>
 
             <div class="mt-4 mb-6">
-              <input type="text" class="shadow w-full p-2" x-model="todoTitle" @keydown.enter="addTodo();" placeholder="Enter new task..." />
+              <input type="text" class="shadow w-full p-2" x-model="todoTitle" x-ref="todoInsert" @keydown.enter="addTodo();" placeholder="Enter new task..." />
             </div>
 
-            <ul class="mb-6">
+            <ul class="mb-6" :class="{'bg-gray-100': todos.length == 0}">
+              <div :class="{ 'block text-center' : todos.length == 0, 'hidden' : todos.length != 0}">
+                <img
+                  src="https://ouch-cdn2.icons8.com/mZ23H_A2qhfEMhki7AKVC_Es-ys89qc8cb7TEjzlDTc/rs:fit:256:238/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvODgz/LzY4NWYyMzhjLWFm/YTAtNDQ3Zi1iZGEy/LWE5NWQ2ZGFmMjM4/NS5zdmc.png"
+                  alt=""
+                  width="360"
+                  class="w-52 mx-auto mb-4"
+                />
+                <h2 class="text-semibold py-4 text-xl text-gray-800 text-center">Add you first todo above.</h2>
+
+                <button class="bg-blue-700 px-4 py-3 mt-4 text-white text-sm rounded" @click="$nextTick(()=> $refs.todoInsert.focus())">Add task</button>
+              </div>
+
               <template x-for="todo in todos" :key="todo.id">
                 <li class="flex items-center justify-between mt-4">
                   <div class="flex items-center" :class="{ 'line-through' : todo.isComplete === true }">
@@ -850,6 +862,7 @@
           ],
           todoTitle: '',
           todoId: 4,
+
           // Add todo to the todos array.
           addTodo() {
             if (this.todoTitle.trim() === '') {
@@ -870,7 +883,6 @@
           // Remove todo from the todos array.
           deleteTodo(id) {
             // this.todos.splice(id - 1, 1); // One method to delete todo but you sit with the problem where keys and buttons dont match.
-
             this.todos = this.todos.filter((todo) => (todo.id != id ? todo : ''));
           },
         };
